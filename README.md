@@ -7,6 +7,6 @@ Note : All the components in the project are build explicitly using material UI
 
 TECH STACK:
 
-front end : REACT,MATERIAL UI
+Front end : REACT,MATERIAL UI
 
-back end : NODE,EXPRESS,MONGODB,JsonWebToken
+Back end : NODE,EXPRESS,MONGODB,JsonWebToken
