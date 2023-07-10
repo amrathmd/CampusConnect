@@ -88,11 +88,8 @@ const Navbar = () => {
             sx={{ display: mobile ? "none" : "block" }}
             variant={navbarWidth ? "h6" : "h4"}
             mr={1}
-            color={theme.palette.primary.main}
           >
-            {/* <Link to="/" color="inherit"> */}
-              PostIt
-            {/* </Link> */}
+            CampusConnect
           </Typography>
         </HorizontalStack>
 
