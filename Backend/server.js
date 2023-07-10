@@ -25,14 +25,14 @@ io.use(authSocket);
 io.on("connection", (socket) => socketServer(socket));
 
 mongoose.connect(
-  process.env.MONGO_URI,
+  process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("MongoDB connected");
   }
 );
 
-httpServer.listen(process.env.PORT || 4000, () => {
+httpServer.listen(process.env.PORT || 3000, () => {
   console.log("Listening");
 });
 
