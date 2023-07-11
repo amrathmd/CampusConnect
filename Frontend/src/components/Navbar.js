@@ -136,6 +136,7 @@ const Navbar = () => {
             </>
           )}
         </HorizontalStack>
+    
       </Stack>
       {navbarWidth && searchIcon && (
         <Box component="form" onSubmit={handleSubmit} mt={2}>
@@ -149,6 +150,7 @@ const Navbar = () => {
         </Box>
       )}
     </Stack>
+  
   );
 };
 

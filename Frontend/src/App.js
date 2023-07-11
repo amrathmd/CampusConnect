@@ -26,36 +26,29 @@ import PrivateRoute from "./components/PrivateRoute";
 import SearchView from "./components/views/SearchView";
 import MessengerView from "./components/views/MessengerView";
 import { initiateSocketConnection, socket } from "./helpers/socketHelper";
+import { isLoggedIn } from "./helpers/authHelper";
+import  NoLoginView  from "./components/views/NoLoginView";
 
 
 function App() {
   initiateSocketConnection();
+  const user = isLoggedIn();
 
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <CssBaseline />
         <Routes>
-          <Route path="/" element={<ExploreView />} />
+        <Route path="/" element={<ExploreView />} />
           <Route path="/posts/:id" element={<PostView />} />
-          <Route
-            path="/posts/create"
-            element={
-              <PrivateRoute>
-                <CreatePostView />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/messenger"
-            element={
-              <PrivateRoute>
+          <Route path="/posts/create" element={<PrivateRoute>
+              <CreatePostView />
+          </PrivateRoute>} />
+          <Route path="/messenger" element={<PrivateRoute>
                 <MessengerView />
-              </PrivateRoute>
-            }
-          />
-          <Route path="/search" element={<SearchView />} />
-          <Route path="/users/:id" element={<ProfileView />} />
+              </PrivateRoute>} />
+              <Route path="/search" element={<SearchView />} />
+              <Route path="/users/:id" element={<ProfileView />} />
           <Route path="/login" element={<LoginView />} />
           <Route path="/signup" element={<SignupView />} />
         </Routes>
