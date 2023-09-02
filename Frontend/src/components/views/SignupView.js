@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import Copyright from "../Copyright";
 import ErrorAlert from "../ErrorAlert";
 import { isLength, isEmail, contains } from "validator";
+import logo from '../../images/blueSmallLogo.png';
 
 const SignupView = () => {
   const navigate = useNavigate();
@@ -74,11 +75,10 @@ const SignupView = () => {
   return (
     <Container maxWidth={"xs"} sx={{ mt: { xs: 2, md: 6 } }}>
       <Stack alignItems="center">
-        <Typography variant="h2" color="text.secondary" sx={{ mb: 6 }}>
-          <Link to="/" color="inherit" underline="none">
-            CampusConnect
-          </Link>
-        </Typography>
+      <div style={{display:'flex' , flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+            <img src={logo} style={{height: '150px' , width: '280px', borderRadius: '10px'}}></img>
+              
+          </div>
         <Typography variant="h5" gutterBottom>
           Sign Up
         </Typography>

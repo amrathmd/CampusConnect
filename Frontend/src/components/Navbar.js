@@ -23,6 +23,8 @@ import { isLoggedIn, logoutUser } from "../helpers/authHelper";
 import UserAvatar from "./UserAvatar";
 import HorizontalStack from "./util/HorizontalStack";
 import { RiContrast2Line } from "react-icons/ri";
+import data from '../images/blackLogo.png'
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -79,11 +81,7 @@ const Navbar = () => {
         spacing={!mobile ? 2 : 0}
       >
         <HorizontalStack>
-          <AiFillFileText
-            size={33}
-            color={theme.palette.primary.main}
-            onClick={() => navigate("/")}
-          />
+          <img src={data} style={{height: '90px' , width: '150px' , borderRadius: '10px'}}></img>
           <Typography
             sx={{ display: mobile ? "none" : "block" }}
             variant={navbarWidth ? "h6" : "h4"}
