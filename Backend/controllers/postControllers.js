@@ -109,7 +109,7 @@ const deletePost = async (req, res) => {
       throw new Error("Not authorized to delete post");
     }
 
-    await post.remove();
+    await post.delete({_id:postId});
 
     await Comment.deleteMany({ post: post._id });
 
@@ -124,7 +124,7 @@ const setLiked = async (posts, userId) => {
   let searchCondition = {};
   if (userId) searchCondition = { userId };
 
-  const userPostLikes = await PostLike.find(searchCondition); //userId needed
+  const userPostLikes = await PostLike.find(searchCondition); 
 
   posts.forEach((post) => {
     userPostLikes.forEach((userPostLike) => {
